@@ -1,0 +1,95 @@
+/*
+ * Copyright 2018 Google LLC
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.google.ar.sceneform.samples.hellosceneform"
+
+        // Sceneform requires minSdkVersion >= 24.
+        minSdkVersion 24
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+    // Sceneform libraries use language constructs from Java 8.
+    // Add these compile options if targeting minSdkVersion < 26.
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+
+    // Provides ArFragment, and other Sceneform UX resources:
+    implementation "com.google.ar.sceneform.ux:sceneform-ux:1.8.0"
+
+    // Use the Sceneform UX Package built from the source files included in the sceneformux folder.
+    //api project(":sceneformux")
+
+    // Alternatively, use ArSceneView without the UX dependency.
+    //implementation "com.google.ar.sceneform:core:1.8.0"
+
+    implementation "com.android.support:appcompat-v7:28.0.0"
+}
+
+apply plugin: 'com.google.ar.sceneform.plugin'
+
+sceneform.asset('sampledata/models/andy.obj',
+        'default',
+        'sampledata/models/andy.sfa',
+        'src/main/res/raw/andy')
+
+
+sceneform.asset('sampledata/model.gltf',
+        'default',
+        'sampledata/model.sfa',
+        'src/main/res/raw/model')
+
+
+sceneform.asset('sampledata/table/m_3243705_40985558.gltf',
+        'default',
+        'sampledata/table/m_3243705_40985558.sfa',
+        'src/main/res/raw/m_3243705_40985558')
+
+
+sceneform.asset('sampledata/table_2/m_1061046047_61046047.gltf',
+        'default',
+        'sampledata/table_2/m_1061046047_61046047.sfa',
+        'src/main/res/raw/m_1061046047_61046047')
+
+sceneform.asset('sampledata/Clock/m_1047488687_47488687.gltf',
+        'default',
+        'sampledata/Clock/m_1047488687_47488687.sfa',
+        'src/main/res/raw/m_1047488687_47488687')
+
+
+sceneform.asset('sampledata/table_3/m_1013588384_13588384.gltf',
+        'default',
+        'sampledata/table_3/m_1013588384_13588384.sfa',
+        'src/main/res/raw/m_1013588384_13588384')
+
+sceneform.asset('sampledata/chair_1/m_3324972_61494152.gltf',
+        'default',
+        'sampledata/chair_1/m_3324972_61494152.sfa',
+        'src/main/res/raw/m_3324972_61494152')

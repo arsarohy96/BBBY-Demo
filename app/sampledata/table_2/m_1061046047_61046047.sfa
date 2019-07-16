@@ -1,0 +1,172 @@
+{
+  materials: [
+    {
+      name: 'Shadow',
+      parameters: [
+        {
+          baseColorFactor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColor: 'm_1061046047_61046047_Shadow',
+        },
+        {
+          diffuseColorFactor: null,
+        },
+        {
+          diffuseColor: null,
+        },
+        {
+          normal: null,
+        },
+        {
+          metallicFactor: 0,
+        },
+        {
+          roughnessFactor: 0.98999999999999999,
+        },
+        {
+          specularFactor: null,
+        },
+        {
+          glossinessFactor: null,
+        },
+        {
+          specularGlossiness: null,
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: null,
+        },
+        {
+          occlusion: null,
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
+    },
+    {
+      name: 'm_1061046047_61046047',
+      parameters: [
+        {
+          baseColorFactor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColor: 'm_1061046047_61046047_Base',
+        },
+        {
+          diffuseColorFactor: null,
+        },
+        {
+          diffuseColor: null,
+        },
+        {
+          normal: 'm_1061046047_61046047_Normal',
+        },
+        {
+          metallicFactor: 1,
+        },
+        {
+          roughnessFactor: 1,
+        },
+        {
+          specularFactor: null,
+        },
+        {
+          glossinessFactor: null,
+        },
+        {
+          specularGlossiness: null,
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: 'm_1061046047_61046047_Metallic_1061046047_61046047_Roughness',
+        },
+        {
+          occlusion: null,
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/table_2/m_1061046047_61046047.gltf',
+    name: 'm_1061046047_61046047',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/table_2/m_1061046047_61046047_Metallic_1061046047_61046047_Roughness.png',
+      name: 'm_1061046047_61046047_Metallic_1061046047_61046047_Roughness',
+      params: {
+        usage_type: 'Data',
+      },
+      pipeline_name: 'm_1061046047_61046047_Metallic_1061046047_61046047_Roughness.png',
+    },
+    {
+      file: 'sampledata/table_2/m_1061046047_61046047_Base.jpg',
+      name: 'm_1061046047_61046047_Base',
+      pipeline_name: 'm_1061046047_61046047_Base.jpg',
+    },
+    {
+      file: 'sampledata/table_2/m_1061046047_61046047_Normal.jpg',
+      name: 'm_1061046047_61046047_Normal',
+      params: {
+        usage_type: 'Normal',
+      },
+      pipeline_name: 'm_1061046047_61046047_Normal.jpg',
+    },
+    {
+      file: 'sampledata/table_2/m_1061046047_61046047_Shadow.png',
+      name: 'm_1061046047_61046047_Shadow',
+      pipeline_name: 'm_1061046047_61046047_Shadow.png',
+    },
+  ],
+  version: '0.54:2',
+}
