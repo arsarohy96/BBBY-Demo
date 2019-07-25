@@ -1,0 +1,16 @@
+{
+  "validationDetails": [
+    {
+      "Status": "PASSED",
+      "Validation": "Group name in 3dsmax file should be same as the file name"
+    },
+    {
+      "Status": "PASSED",
+      "Validation": "All textures found and are named correctly"
+    },
+    {
+      "Status": "PASSED",
+      "Validation": "Shadow node should be present with valid name"
+    }
+  ]
+}

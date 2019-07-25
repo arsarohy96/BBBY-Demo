@@ -1,0 +1,10 @@
+{
+  "materials": {
+    "Default": {
+      "diffuseMap": "534815_534815_Base.jpg",
+      "normalMap": "534815_534815_Normal.jpg",
+      "metalnessMap": "534815_534815_Metallic.jpg",
+      "roughnessMap": "534815_534815_Roughness.jpg"
+    }
+  }
+}

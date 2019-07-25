@@ -35,6 +35,7 @@ import com.google.ar.core.Anchor;
 import com.google.ar.core.HitResult;
 import com.google.ar.core.Plane;
 import com.google.ar.sceneform.AnchorNode;
+import com.google.ar.sceneform.math.Vector3;
 import com.google.ar.sceneform.rendering.Color;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.rendering.PlaneRenderer;
@@ -175,24 +176,31 @@ public class HelloSceneformActivity extends AppCompatActivity {
 
                     // Create the transformable andy and add it to the anchor.
                     TransformableNode andy = new AnimatorNode(arFragment.getTransformationSystem());
+
+//                    andy.getScaleController().setMinScale(0.5f);
+//                    andy.getScaleController().setMaxScale(3.0f);
+//
+//                    andy.setLocalScale(new Vector3(2.25f, 2.25f, 2.25f));
+
+
                     andy.setParent(anchorNode);
                     andy.setRenderable(selectedRenderable);
                     // disable live shadow casting
                     selectedRenderable.setShadowCaster(false);
 
-                    ObjectAnimator scaleDownX = ObjectAnimator.ofFloat(andy, "scaleX", 0.25f);
-                    ObjectAnimator scaleDownY = ObjectAnimator.ofFloat(andy, "scaleY", 0.25f);
-                    ObjectAnimator scaleDownZ = ObjectAnimator.ofFloat(andy, "scaleZ", 0.25f);
-
-                    scaleDownX.setDuration(7000);   // Duration 7 seconds
-                    scaleDownY.setDuration(7000);
-                    scaleDownZ.setDuration(7000);
-
-                    AnimatorSet scaleDown = new AnimatorSet();
-                    scaleDown.play(scaleDownX).with(scaleDownY);
-                    scaleDown.play(scaleDownX).with(scaleDownZ);  // 3 animations play simultaneously
-
-                    scaleDown.start();
+//                    ObjectAnimator scaleDownX = ObjectAnimator.ofFloat(andy, "scaleX", 0.25f);
+//                    ObjectAnimator scaleDownY = ObjectAnimator.ofFloat(andy, "scaleY", 0.25f);
+//                    ObjectAnimator scaleDownZ = ObjectAnimator.ofFloat(andy, "scaleZ", 0.25f);
+//
+//                    scaleDownX.setDuration(7000);   // Duration 7 seconds
+//                    scaleDownY.setDuration(7000);
+//                    scaleDownZ.setDuration(7000);
+//
+//                    AnimatorSet scaleDown = new AnimatorSet();
+//                    scaleDown.play(scaleDownX).with(scaleDownY);
+//                    scaleDown.play(scaleDownX).with(scaleDownZ);  // 3 animations play simultaneously
+//
+//                    scaleDown.start();
 
 
 

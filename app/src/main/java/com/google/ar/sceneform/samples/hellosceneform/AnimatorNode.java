@@ -32,35 +32,46 @@ public class AnimatorNode extends TransformableNode {
         List<Animator> animatorList = new ArrayList<Animator>();
         ObjectAnimator orbitAnimation = createAnimator();
         orbitAnimation.setTarget(this);
-        orbitAnimation.setDuration(1000);
+        orbitAnimation.setDuration(2000);
         animatorList.add(orbitAnimation);
 
         ObjectAnimator orbitAnimation1 = sclaeAnimation();
         orbitAnimation1.setTarget(this);
-        orbitAnimation1.setDuration(1000);
+        //orbitAnimation1.setDuration(1000);
         animatorList.add(orbitAnimation1);
 
-        AnimatorSet as= new AnimatorSet();
+        AnimatorSet as = new AnimatorSet();
         as.playTogether(animatorList);
-        as.start();
+        //as.start();
         getScaleController().setEnabled(false);
-        getRotationController().setEnabled(false);
-        getTranslationController().setEnabled(false);
+        //getRotationController().setEnabled(false);
+        //getTranslationController().setEnabled(false);
+    }
+
+
+    @Override
+    public boolean select() {
+//        isSelected = !isSelected;
+//        if (isSelected) {
+//            getTranslationController().setEnabled(true);
+//            getRotationController().setEnabled(true);
+//            startAnimation();
+//        } else {
+//            stopAnimation();
+//            getRotationController().setEnabled(false);
+//            getTranslationController().setEnabled(false);
+//
+//        }
+        Log.d("Node", "select");
+        return super.select();
     }
 
     @Override
     public void onTap(HitTestResult hitTestResult, MotionEvent motionEvent) {
+
         super.onTap(hitTestResult, motionEvent);
-        Log.d("Tested", String.valueOf(isSelected));
-        isSelected = !isSelected;
-        if (isSelected) {
-            getRotationController().setEnabled(true);
-            startAnimation();
-        }else {
-            stopAnimation();
-            getRotationController().setEnabled(false);
-            getTranslationController().setEnabled(true);
-        }
+        Log.d("TouchListener", "onTap");
+
     }
 
 
@@ -69,7 +80,7 @@ public class AnimatorNode extends TransformableNode {
             orbitAnimation.cancel();
         orbitAnimation = upDownAnimation();
         orbitAnimation.setTarget(this);
-        orbitAnimation.setDuration(1000);
+        orbitAnimation.setDuration(2000);
         orbitAnimation.start();
     }
 
@@ -78,7 +89,7 @@ public class AnimatorNode extends TransformableNode {
             return;
         }
         orbitAnimation.cancel();
-        setLocalPosition(new Vector3(0f,0f,0f));
+        setLocalPosition(new Vector3(0f, 0f, 0f));
         orbitAnimation = null;
     }
 
@@ -92,7 +103,7 @@ public class AnimatorNode extends TransformableNode {
         Quaternion orientation4 = Quaternion.axisAngle(new Vector3(0.0f, 1.0f, 0.0f), 360);
 
         ObjectAnimator orbitAnimation = new ObjectAnimator();
-        orbitAnimation.setObjectValues(orientation1, orientation2, orientation3,  orientation4);
+        orbitAnimation.setObjectValues(orientation1, orientation2, orientation3, orientation4);
 
         // Next, give it the localRotation property.
         orbitAnimation.setPropertyName("localRotation");
@@ -110,7 +121,7 @@ public class AnimatorNode extends TransformableNode {
     }
 
     private ObjectAnimator upDownAnimation() {
-        Vector3 vector1 = new Vector3(0f, .08f, 0f);
+        Vector3 vector1 = new Vector3(0f, .1f, 0f);
         ObjectAnimator dropAnimation = new ObjectAnimator();
         dropAnimation.setObjectValues(vector1);
         dropAnimation.setPropertyName("localPosition");
@@ -123,15 +134,18 @@ public class AnimatorNode extends TransformableNode {
     }
 
     private ObjectAnimator sclaeAnimation() {
-        Vector3 vector1 = new Vector3(1f, 1f, 1f);
-        ObjectAnimator dropAnimation = new ObjectAnimator();
-        dropAnimation.setObjectValues(vector1);
-        dropAnimation.setPropertyName("localScale");
-        dropAnimation.setEvaluator(new Vector3Evaluator());
-        dropAnimation.setRepeatCount(ObjectAnimator.INFINITE);
-        dropAnimation.setRepeatMode(ObjectAnimator.REVERSE);
-        dropAnimation.setInterpolator(new DecelerateInterpolator());
-        dropAnimation.setAutoCancel(true);
-        return dropAnimation;
+        Vector3 vector1 = new Vector3(0f, 0f, 0f);
+        vector1.scaled(0.01f);
+        Vector3 vector2 = new Vector3(1f, 1f, 1f);
+        vector2.scaled(1.0f);
+        ObjectAnimator scaleAnimation = new ObjectAnimator();
+        scaleAnimation.setObjectValues(vector1, vector2);
+        scaleAnimation.setPropertyName("localScale");
+        scaleAnimation.setEvaluator(new Vector3Evaluator());
+//        scaleAnimation.setRepeatCount(ObjectAnimator.INFINITE);
+//        scaleAnimation.setRepeatMode(ObjectAnimator.REVERSE);
+//        scaleAnimation.setInterpolator(new DecelerateInterpolator());
+        //scaleAnimation.setAutoCancel(true);
+        return scaleAnimation;
     }
 }

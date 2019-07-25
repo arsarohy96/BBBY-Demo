@@ -93,3 +93,13 @@ sceneform.asset('sampledata/chair_1/m_3324972_61494152.gltf',
         'default',
         'sampledata/chair_1/m_3324972_61494152.sfa',
         'src/main/res/raw/m_3324972_61494152')
+
+sceneform.asset('sampledata/model_3/1061520714_61520714.gltf',
+        'default',
+        'sampledata/model_3/1061520714_61520714.sfa',
+        'src/main/res/raw/m_1061520714_61520714')
+
+sceneform.asset('sampledata/model_1/534815_534815.obj',
+        'default',
+        'sampledata/model_1/534815_534815.sfa',
+        'src/main/res/raw/m_534815_534815')
